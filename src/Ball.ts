@@ -121,10 +121,6 @@ export class Ball {
     ctx.closePath();
   }
 
-  static isNearZero(p: Point) {
-    return Math.sqrt(p.x * p.x + p.y * p.y) < 0.01;
-  }
-
   update(canvas: HTMLCanvasElement): void {
     if (
       Math.sqrt(
