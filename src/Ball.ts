@@ -85,13 +85,11 @@ export class Ball {
     }
   }
 
-  distance(x: number, y: number) {
-    // Euclidean distance formula
-    return Math.sqrt(Math.pow(this.x - x, 2) + Math.pow(this.y - y, 2));
-  }
-
   collision(ball: Ball) {
-    if (this.distance(ball.x, ball.y) <= Ball.radius * 2) {
+    if (
+      Math.sqrt(Math.pow(this.x - ball.x, 2) + Math.pow(this.y - ball.y, 2)) <=
+      Ball.radius * 2
+    ) {
       Ball.moveBallsOutOfCollision(this, ball);
 
       let positionSub = {
